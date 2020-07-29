@@ -1,1 +1,7 @@
-<div><%= notification.user.email %> <%= notification.action %> you!</div>
+<div class="alert alert-primary alert-info" role="alert">
+<p><%= notification.id %> <%= notification.inspect %></p>
+  <p>Hi, <%= notification.recipient.email %></p>
+  <p><strong><%= notification.user.email %> <%= notification.action %> you!</strong></p>
+  <p><%= notification.message %></p>
+<p><%= time_ago_in_words(notification.user.created_at) %> ago</p>
+</div>

@@ -32,6 +32,7 @@
           <ul class="nav navbar-nav navbar-right">
 
             <% if user_signed_in? %>
+              <li><%= current_user.email %></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             <% else %>
               <li><%= link_to "Login", new_user_session_path(redirect_to: request.path) %></li>
@@ -44,4 +45,5 @@
 
     <%= yield %>
   </body>
+<%= any_login_here if defined?(AnyLogin) %>
 </html>
